@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass {
+    @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/20;
+  }
+  
+  .neumorphism {
+    @apply bg-white dark:bg-gray-800;
+    box-shadow: 
+      20px 20px 60px #bebebe,
+      -20px -20px 60px #ffffff;
+  }
+  
+  .neumorphism-dark {
+    box-shadow: 
+      20px 20px 60px #0f172a,
+      -20px -20px 60px #1e293b;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500/30 text-primary-900 dark:text-primary-100;
+}
